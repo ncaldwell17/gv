@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <script src="resources/chicago.js"></script>
+    <script src="resources/beats.js"></script>
+    <script src="components.js"></script>
+    <script src="mapmaker.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: linear-gradient(to right, #5e00a3, #4b0082, #3c0068);
+            background-repeat: no-repeat;
+            height: 100vh;
+            min-height: 600px;
+        }
+        #graphicContainer {
+            background-image: linear-gradient(to right, #3c0068, #300053);
+            height: 75vh;
+            min-height: 500px;
+            width: 70%;
+            min-width: 450px;
+            max-width: 800px;
+            margin: 100px auto;
+            border-radius: 20px;
+            z-index: 0;
+        }
+        #hiddenContainer {
+            height: 75vh;
+            min-height: 500px;
+            width: 30%;
+            min-width: 300px;
+            border-radius: 20px;
+            margin-left: 900px;
+            margin-top: -755px;
+            z-index: -1;
+            display: none;
+            color: white;
+            font-family: 'Fjalla One', sans-serif;
+            float: left;
+            transition-delay: 2s;
+        }
+
+
+        #optionColumn {
+            float: left;
+            height: 75vh;
+            min-height: 500px;
+            width: 10%;
+            border-right: 1px solid white;
+        }
+        #mapContainer {
+            float: left;
+            height: 75vh;
+            min-height: 500px;
+            width: 88%;
+        }
+
+        .move-left {
+            position: relative;
+            animation: rearrange 2s forwards;
+        }
+
+        @keyframes rearrange {
+            0% {left: 0; top: 0}
+            100% {top: 0; left: -300px;}
+        }
+
+        .anOption {
+            height: 33.3%;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .anOption:hover {
+            background-color: white;
+            transition: 1s;
+            cursor: pointer;
+            color: #300053;
+        }
+        .anOptionText {
+            padding-top: 50px;
+            padding-left: 30px;
+            writing-mode: tb-rl;
+            font-size: 20px;
+        }
+        #geoTab {
+            border-top-left-radius: 20px;
+            border-bottom: 1px solid white;
+        }
+        #inputTab {
+            border-bottom-left-radius: 20px;
+            border-top: 1px solid white;
+        }
+
+
+
+        @media (max-width:800px){
+            .anOptionText {
+                padding-left: 20%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="graphicContainer">
+        <div id="optionColumn">
+            <div class="anOption" id="geoTab" onclick="animate_object()">
+                <div class="anOptionText">GEOGRAPHY</div>
+            </div>
+
+            <div class="anOption">
+                <div class="anOptionText" style="padding-top: 80px">DATA</div>
+            </div>
+            <div class="anOption" id="inputTab">
+                <div class="anOptionText" style="padding-top: 70px">INPUTS</div>
+            </div>
+        </div>
+        <div id="mapContainer"></div>
+    </div>
+    <div id="hiddenContainer">
+        <div class="menu" id="variableSettings"></div>
+        <div class="menu">
+            <div class="menuTitle">Current Settings</div>
+            <div id="currentSettings">
+                <ul>
+                    <li class="settingList">Police Beats</li>
+                    <li class="settingList">Homicides, Shootings, Gangs</li>
+                    <li class="settingList">170 Volunteers, 10/Division</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        const target = document.getElementById('graphicContainer');
+        const hidden = document.getElementById('hiddenContainer');
+        const settings = document.getElementById('variableSettings');
+        function animate_object() {
+            if(target.classList.contains('move-left')) {
+                delete_map();
+                initial_render();
+            }
+            target.classList.add('move-left');
+            hidden.style.display = 'block';
+            settings.innerHTML = geoSettings;
+        }
+    </script>
+    <script>
+        // reusable width & height
+        const width = document.getElementById('mapContainer').offsetWidth;
+        const height = document.getElementById('mapContainer').offsetHeight;
+
+        // Create SVG
+        let svg = d3.select('#mapContainer')
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+        // append empty placeholder g element to the SVG
+        // g will contain geometry elements
+        let g = svg.append("g");
+
+        // set projection parameters IDK why this is needed
+        let albersProjection = d3.geoAlbers()
+            .scale(80000)
+            .rotate([87.6298,0])
+            .center([0, 41.8781])
+            .translate([width/1.7,height/2.5]);
+
+        let geoPath = d3.geoPath()
+            .projection(albersProjection);
+
+        g.selectAll("path")
+            .data(chicago_outline.features)
+            .enter()
+            .append("path")
+            .attr( "fill", "#ccc" )
+            .attr( "stroke", "#333")
+            .attr('d', geoPath);
+    </script>
+</body>
+</html>
