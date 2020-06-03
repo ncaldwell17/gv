@@ -6,7 +6,7 @@ const geoSettings = `
         `;
 let varlist = [];
 const dataSettings = `
-        <div class="menuTitle">Set Risk Score Preferences</div>
+        <div class="menuTitle">Set Risk Factor Preferences</div>
         
         <div id="variableContainer">
             <div class="variableSelectInactive" id="gangs" onclick="varlist=color_map(geokey, 'gangs', varlist)">Gangs per Division</div>
@@ -16,16 +16,16 @@ const dataSettings = `
         
         </div>
         
-        <div class="variableSubmit" onclick="color_map(geokey, 'risk_scores', varlist);  next_step('inputTab')">Submit to Risk Score Map</div>
+        <div class="variableSubmit" onclick="color_map(geokey, 'risk_scores', varlist);  next_step('inputTab')">Submit to Risk Factor Map</div>
         `;
 let header = 0;
 const inputSettings = `
-            <div class="menuTitle">Input Volunteer Data</div>
+            <div class="menuTitle">Input Worker Data</div>
             <div class="dataContainer">
                     <div class="h2">Enter Total Number of Outreach Workers</div>
                     <input type="text" id="total" style="margin-bottom: 20px; text-align: center">
                     <div class="h2">Enter Optimal Number of Workers / Geo Div</div>
                     <input type="text" id="divisor" onchange="header=calculate_header()" style="text-align: center;">
-                    <div class="variableSubmit" onclick="final_map(geokey, header)">Submit for Risk Score Map</div>
+                    <div class="variableSubmit" onclick="final_map(geokey, header)">Submit for Risk Factor Map</div>
             </div>
         `;
