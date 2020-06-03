@@ -29,15 +29,9 @@
             font-size: 45px;
             text-align: center;
         }
-
-        .move-left {
-            position: relative;
-            animation: rearrange 2s forwards;
-        }
-
-        @keyframes rearrange {
-            0% {left: 0; top: 0}
-            100% {top: 0; left: -300px;}
+        #mainWrapper {
+            width: 1200px;
+            margin: 100px auto;
         }
 
         #geoTab {
@@ -50,71 +44,47 @@
         }
 
         @media (max-width:800px){
-            .anOptionText {
-                padding-left: 20%;
-            }
         }
 
     </style>
 </head>
 <body>
-    <div id="graphicContainer">
-        <div id="optionColumn">
-            <div class="anOption" id="geoTab" onclick="animate_object()">
-                <div class="anOptionIcon">
-                    <i class="fa fa-globe"></i>
+    <div id="mainWrapper">
+        <div id="graphicContainer">
+            <div id="optionColumn">
+                <div class="anOption" id="geoTab" onclick="next_step('geoTab');">
+                    <div class="anOptionIcon">
+                        <i class="fa fa-globe"></i>
+                    </div>
                 </div>
-            </div>
 
-            <div class="anOption" id="dataTab" onclick="flash_warning('Click on the globe first')">
-                <div class="anOptionIcon">
-                    <i class="fa fa-database"></i>
+                <div class="anOption" id="dataTab" onclick="flash_warning('Click on the globe first')">
+                    <div class="anOptionIcon">
+                        <i class="fa fa-database"></i>
+                    </div>
+                </div>
+                <div class="anOption" id="inputTab" onclick="flash_warning('Click on the globe first')">
+                    <div class="anOptionIcon">
+                        <i class="fa fa-pencil"></i>
+                    </div>
                 </div>
             </div>
-            <div class="anOption" id="inputTab" onclick="flash_warning('Click on the globe first')">
-                <div class="anOptionIcon">
-                    <i class="fa fa-pencil"></i>
+            <div id="mapContainer"></div>
+        </div>
+        <div id="hiddenContainer">
+            <div class="menu" id="variableSettings"></div>
+            <div class="menu">
+                <div class="menuTitle">Recommended Settings</div>
+                <div id="currentSettings">
+                    <ul>
+                        <li class="settingList">Police Beats</li>
+                        <li class="settingList">Homicides, Shootings, Gangs</li>
+                        <li class="settingList">170 Volunteers, 10/Division</li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div id="mapContainer"></div>
     </div>
-    <div id="hiddenContainer">
-        <div class="menu" id="variableSettings"></div>
-        <div class="menu">
-            <div class="menuTitle">Current Settings</div>
-            <div id="currentSettings">
-                <ul>
-                    <li class="settingList">Police Beats</li>
-                    <li class="settingList">Homicides, Shootings, Gangs</li>
-                    <li class="settingList">170 Volunteers, 10/Division</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <script>
-        const target = document.getElementById('graphicContainer');
-        const hidden = document.getElementById('hiddenContainer');
-        const settings = document.getElementById('variableSettings');
-        function animate_object() {
-            if(target.classList.contains('move-left')) {
-                delete_map();
-                initial_render();
-            }
-            target.classList.add('move-left');
-            hidden.style.display = 'block';
-            settings.innerHTML = geoSettings;
-
-            if(document.getElementById("dataTab").classList.contains('anOptionActive')) {
-                document.getElementById("dataTab").classList.remove('anOptionActive');
-                document.getElementById("geoTab").classList.add('anOptionActive');
-            }
-            else {
-                document.getElementById("geoTab").classList.add('anOptionActive');
-            }
-
-        }
-    </script>
     <script>
         // reusable width & height
         const width = document.getElementById('mapContainer').offsetWidth;

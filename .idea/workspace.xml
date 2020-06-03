@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38e7c7ab-b591-4078-b275-b33d758c33e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/districts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/zipcodes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ncg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/ncg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gv.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gv.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/components.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mapmaker.js" beforeDir="false" afterPath="$PROJECT_DIR$/mapmaker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/beats.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/beats.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sandbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1590647920210</updated>
       <workItem from="1590647922620" duration="41637000" />
-      <workItem from="1591053120526" duration="3474000" />
+      <workItem from="1591053120526" duration="6241000" />
     </task>
     <servers />
   </component>
@@ -92,5 +83,9 @@
       <screen x="0" y="23" width="1680" height="953" />
     </state>
     <state width="600" height="424" key="javadoc.popup/0.23.1680.953@0.23.1680.953" timestamp="1590997969325" />
+    <state x="665" y="232" width="670" height="676" key="search.everywhere.popup" timestamp="1591215946689">
+      <screen x="0" y="23" width="1680" height="953" />
+    </state>
+    <state x="665" y="232" width="670" height="676" key="search.everywhere.popup/0.23.1680.953@0.23.1680.953" timestamp="1591215946689" />
   </component>
 </project>

@@ -1,8 +1,8 @@
 const geoSettings = `
             <div class="menuTitle">Set Geographic Divisions</div>
-            <div class="variableSelectInactive" onclick="delete_map(); geokey=render_map('beats'); next_step('data')">Police Beats</div>
-            <div class="variableSelectInactive" onclick="delete_map(); geokey=render_map('zipcodes'); next_step('data')">Zipcodes</div>
-            <div class="variableSelectInactive" onclick="delete_map(); geokey=render_map('districts'); next_step('data')">Districts</div>
+            <div class="variableSelectInactive" onclick="delete_map(); geokey=render_map('beats'); next_step('dataTab')">Police Beats</div>
+            <div class="variableSelectInactive" onclick="delete_map(); geokey=render_map('zipcodes'); next_step('dataTab')">Zipcodes</div>
+            <div class="variableSelectInactive" onclick="delete_map(); geokey=render_map('districts'); next_step('dataTab')">Districts</div>
         `;
 let varlist = [];
 const dataSettings = `
@@ -16,14 +16,16 @@ const dataSettings = `
         
         </div>
         
-        <div class="variableSubmit" onclick="color_map(geokey, 'risk_scores', varlist)">Submit to Risk Score Map</div>
+        <div class="variableSubmit" onclick="color_map(geokey, 'risk_scores', varlist);  next_step('inputTab')">Submit to Risk Score Map</div>
         `;
 let header = 0;
 const inputSettings = `
             <div class="menuTitle">Input Volunteer Data</div>
-            <div class="h2">Enter Total Number of Outreach Workers</div>
-            <input type="text" id="total"><br>
-            <div class="h2">Enter Optimal Number of Workers / Geo Div</div>
-            <input type="text" id="divisor" onchange="header=calculate_header()">
-            <div class="variableSubmit" onclick="final_map(geokey, header)">Submit for Risk Score Map</div>
+            <div class="dataContainer">
+                    <div class="h2">Enter Total Number of Outreach Workers</div>
+                    <input type="text" id="total" style="margin-bottom: 20px; text-align: center">
+                    <div class="h2">Enter Optimal Number of Workers / Geo Div</div>
+                    <input type="text" id="divisor" onchange="header=calculate_header()" style="text-align: center;">
+                    <div class="variableSubmit" onclick="final_map(geokey, header)">Submit for Risk Score Map</div>
+            </div>
         `;

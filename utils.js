@@ -7,22 +7,35 @@ function delete_map() {
 }
 
 function next_step(settingkey) {
-    if(settingkey === 'data') {
+    const settings = document.getElementById('variableSettings');
+    if(settingkey === 'geoTab') {
+        settings.innerHTML = geoSettings;
+        make_active(settingkey);
+    }
+    else if(settingkey === 'dataTab') {
         settings.innerHTML = dataSettings;
-        document.getElementById("geoTab").classList.remove('anOptionActive');
-        document.getElementById("dataTab").classList.add('anOptionActive');
+        make_active(settingkey);
     }
-    else if(settingkey === 'input') {
+    else if(settingkey === 'inputTab') {
         settings.innerHTML = inputSettings;
-        document.getElementById('dataTab').classList.remove('anOptionActive');
-        document.getElementById('inputTab').classList.add('anOptionActive');
+        make_active(settingkey);
     }
+}
+
+function make_active(item) {
+    const tabs = [document.getElementById('geoTab'), document.getElementById('dataTab'),
+                  document.getElementById('inputTab')];
+    for(let i=0; i < tabs.length; i++) {
+        tabs[i].classList.remove('anOptionActive');
+    }
+    document.getElementById(item).classList.add('anOptionActive');
 }
 
 function calculate_header() {
     let total = document.getElementById('total').value;
     let divisor = document.getElementById('divisor').value;
     if(divisor > 0) {
+        console.log('The function ran');
         return Math.round((total / divisor));
     }
     else {
@@ -31,6 +44,7 @@ function calculate_header() {
 }
 
 function final_map(geokey, header) {
+    console.log('The mapping function ran');
     let index_vars = {};
 
     if(geokey === 'beats') {
