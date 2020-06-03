@@ -6,57 +6,28 @@
     <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
     <script src="resources/chicago.js"></script>
     <script src="resources/beats.js"></script>
+    <script src="resources/zipcodes.js"></script>
+    <script src="resources/districts.js"></script>
+    <script src="utils.js"></script>
     <script src="components.js"></script>
     <script src="mapmaker.js"></script>
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/fccddcbb90.js"></script>
     <style>
         body {
             background-image: linear-gradient(to right, #5e00a3, #4b0082, #3c0068);
             background-repeat: no-repeat;
             height: 100vh;
             min-height: 600px;
-        }
-        #graphicContainer {
-            background-image: linear-gradient(to right, #3c0068, #300053);
-            height: 75vh;
-            min-height: 500px;
-            width: 70%;
-            min-width: 450px;
-            max-width: 800px;
-            margin: 100px auto;
-            border-radius: 20px;
-            z-index: 0;
-        }
-        #hiddenContainer {
-            height: 75vh;
-            min-height: 500px;
-            width: 30%;
-            min-width: 300px;
-            border-radius: 20px;
-            margin-left: 900px;
-            margin-top: -755px;
-            z-index: -1;
-            display: none;
-            color: white;
             font-family: 'Fjalla One', sans-serif;
-            float: left;
-            transition-delay: 2s;
         }
-
-
-        #optionColumn {
-            float: left;
-            height: 75vh;
-            min-height: 500px;
-            width: 10%;
-            border-right: 1px solid white;
-        }
-        #mapContainer {
-            float: left;
-            height: 75vh;
-            min-height: 500px;
-            width: 88%;
+        .anOptionIcon {
+            height: 50px;
+            width: 50px;
+            margin: 75px auto;
+            font-size: 45px;
+            text-align: center;
         }
 
         .move-left {
@@ -69,24 +40,6 @@
             100% {top: 0; left: -300px;}
         }
 
-        .anOption {
-            height: 33.3%;
-            color: white;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-        .anOption:hover {
-            background-color: white;
-            transition: 1s;
-            cursor: pointer;
-            color: #300053;
-        }
-        .anOptionText {
-            padding-top: 50px;
-            padding-left: 30px;
-            writing-mode: tb-rl;
-            font-size: 20px;
-        }
         #geoTab {
             border-top-left-radius: 20px;
             border-bottom: 1px solid white;
@@ -95,8 +48,6 @@
             border-bottom-left-radius: 20px;
             border-top: 1px solid white;
         }
-
-
 
         @media (max-width:800px){
             .anOptionText {
@@ -110,14 +61,20 @@
     <div id="graphicContainer">
         <div id="optionColumn">
             <div class="anOption" id="geoTab" onclick="animate_object()">
-                <div class="anOptionText">GEOGRAPHY</div>
+                <div class="anOptionIcon">
+                    <i class="fa fa-globe"></i>
+                </div>
             </div>
 
-            <div class="anOption">
-                <div class="anOptionText" style="padding-top: 80px">DATA</div>
+            <div class="anOption" id="dataTab" onclick="flash_warning('Click on the globe first')">
+                <div class="anOptionIcon">
+                    <i class="fa fa-database"></i>
+                </div>
             </div>
-            <div class="anOption" id="inputTab">
-                <div class="anOptionText" style="padding-top: 70px">INPUTS</div>
+            <div class="anOption" id="inputTab" onclick="flash_warning('Click on the globe first')">
+                <div class="anOptionIcon">
+                    <i class="fa fa-pencil"></i>
+                </div>
             </div>
         </div>
         <div id="mapContainer"></div>
@@ -147,6 +104,15 @@
             target.classList.add('move-left');
             hidden.style.display = 'block';
             settings.innerHTML = geoSettings;
+
+            if(document.getElementById("dataTab").classList.contains('anOptionActive')) {
+                document.getElementById("dataTab").classList.remove('anOptionActive');
+                document.getElementById("geoTab").classList.add('anOptionActive');
+            }
+            else {
+                document.getElementById("geoTab").classList.add('anOptionActive');
+            }
+
         }
     </script>
     <script>

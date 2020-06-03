@@ -5,6 +5,11 @@
       <w>geojson</w>
       <w>geokey</w>
       <w>mapbase</w>
+      <w>newmap</w>
+      <w>riskscores</w>
+      <w>settingkey</w>
+      <w>varlist</w>
+      <w>zipcodes</w>
     </words>
   </dictionary>
 </component>

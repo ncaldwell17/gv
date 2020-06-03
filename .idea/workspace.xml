@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="38e7c7ab-b591-4078-b275-b33d758c33e7" name="Default Changelist" comment="" />
+    <list default="true" id="38e7c7ab-b591-4078-b275-b33d758c33e7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/districts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/zipcodes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ncg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/ncg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gv.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gv.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/components.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapmaker.js" beforeDir="false" afterPath="$PROJECT_DIR$/mapmaker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/beats.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/beats.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,7 +31,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1cWcinuULINTaZQCeqFKiUQnoyt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -25,6 +44,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -51,7 +71,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590647920210</updated>
-      <workItem from="1590647922620" duration="20736000" />
+      <workItem from="1590647922620" duration="41637000" />
+      <workItem from="1591053120526" duration="3474000" />
     </task>
     <servers />
   </component>
@@ -67,5 +88,9 @@
       <screen x="0" y="23" width="1680" height="953" />
     </state>
     <state x="944" y="253" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.953@0.23.1680.953" timestamp="1590766831249" />
+    <state width="600" height="424" key="javadoc.popup" timestamp="1590997969325">
+      <screen x="0" y="23" width="1680" height="953" />
+    </state>
+    <state width="600" height="424" key="javadoc.popup/0.23.1680.953@0.23.1680.953" timestamp="1590997969325" />
   </component>
 </project>
